@@ -41,8 +41,9 @@ jobs:
 - name: ⏫ Upload build
   uses: nmerget/upload-tar-artifact@v1.0.0
   with:
-    name: frontend-build # use a good name because this will be shown in GitHub summary
+    name: frontend-build # use a good name because this will be shown in GitHub summary, don't use the same name as `path`
     path: dist # your directory to upload
+    retention-days: 5 # delete the artifact at some point
 ...
 ````
 

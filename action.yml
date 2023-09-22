@@ -12,6 +12,10 @@ inputs:
   path:
     description: 'Path to a directory or file to zip'
     required: true
+  retention-days:
+    description: ' Duration after which artifact will expire in days'
+    required: false
+    default: "5"
 runs:
   using: 'composite'
   steps:
@@ -24,3 +28,4 @@ runs:
       with:
         name: ${{ inputs.name }}
         path: ${{ inputs.name }}
+        retention-days: ${{ inputs.retention-days }}
