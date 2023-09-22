@@ -31,5 +31,5 @@ runs:
         retention-days: ${{ inputs.retention-days }}
 
     - name: 🚮 Remove tar
-      run: ${{ inputs.name }}.tar.gz
+      run: rm ${{ inputs.name }}.tar.gz
       shell: bash
