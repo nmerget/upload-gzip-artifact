@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: ⏫ Upload build
-        uses: nmerget/upload-gzip-artifact@v1.0.0
+        uses: nmerget/upload-gzip-artifact@main
         with:
           name: frontend-build
           path: dist
@@ -39,7 +39,7 @@ jobs:
 ````yaml
 ...
 - name: ⏫ Upload build
-  uses: nmerget/upload-tar-artifact@v1.0.0
+  uses: nmerget/upload-tar-artifact@main
   with:
     name: frontend-build # use a good name because this will be shown in GitHub summary, don't use the same name as `path`
     path: dist # your directory to upload
