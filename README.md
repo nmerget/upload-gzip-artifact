@@ -1,4 +1,4 @@
-# Upload Tar Artifact
+# Upload Gzip Artifact
 
 This is a simple action to tar a directory/file into a tar.gz file and uploads it as artifact.
 This wil increase the speed for large build when using reusable workloads and/or parallel workflows.
