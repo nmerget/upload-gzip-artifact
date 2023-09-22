@@ -1,6 +1,6 @@
 # Upload Tar Artifact
 
-This is a simple action to zip a directory/file into a tar.gz and uploads it as artifact.
+This is a simple action to tar a directory/file into a tar.gz file and uploads it as artifact.
 This wil increase the speed for large build when using reusable workloads and/or parallel workflows.
 
 ## How to use
@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: ⏫ Upload build
-        uses: nmerget/upload-tar-artifact@v1.0.0
+        uses: nmerget/upload-gzip-artifact@v1.0.0
         with:
           name: frontend-build
           path: dist
