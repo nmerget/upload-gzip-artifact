@@ -1,0 +1,26 @@
+---
+name: 'Upload Tar Artifact'
+description: 'Zips a directory/file as {name}.tar.gz and upload an artifact.'
+author: "Nicolas Merget"
+branding:
+  icon: package
+  color: gray-dark
+inputs:
+  name:
+    description: 'Name for the artifact'
+    required: true
+  path:
+    description: 'Path to a directory or file to zip'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: 📦 Pack as tar
+      run: tar -czf ${{ inputs.name }} ${{ inputs.path }}
+      shell: bash
+
+    - name: ⏫ Upload build
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.name }}
+        path: ${{ inputs.name }}
